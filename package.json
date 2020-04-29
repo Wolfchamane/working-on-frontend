@@ -1,0 +1,25 @@
+{
+    "name": "@amjs/working-on-frontend",
+    "version": "0.1.0",
+    "description": "Frontend 4 @amjs/working-on project",
+    "keywords": [
+        "@amjs",
+        "working",
+        "tracking",
+        "hours",
+        "count"
+    ],
+    "author": "Arturo Martínez Díaz <arturo.martinez@amartinez.dev>",
+    "license": "UNLICENSED",
+    "dependencies": {
+        "@amjs/vue-tools": "^1.0.0"
+    },
+    "private": true,
+    "scripts": {
+        "dev": "NODE_ENV=dev node scripts/dev.js",
+        "build": "NODE_ENV=pro node node_modules/@amjs/vue-tools/scripts/build.js",
+        "test": "NODE_ENV=test node node_modules/@amjs/vue-tools/scripts/jest.js",
+        "lint:css": "sass-lint --config node_modules/@amjs/vue-tools/.sass-lint.yml -v",
+        "lint:js": "eslint --fix --config node_modules/@amjs/vue-tools/.eslintrc.yml --ext .js src tests"
+    }
+}

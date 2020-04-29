@@ -1,0 +1,65 @@
+@import '~@/styles/colors'
+
+.app
+    display: flex
+    flex-direction: column
+    height: 100%
+
+    &__header,
+    &__footer
+        display: flex
+        align-items: center
+        justify-content: center
+        width: 100%
+        height: 50px
+
+    &__header
+        box-shadow: 0 2px 2px $grey-3
+
+    &__main
+        display: flex
+        flex-direction: column
+        flex-grow: 1
+        align-items: center
+        justify-content: center
+
+    &__button
+        display: inline-block
+        width: 100px
+        min-height: 40px
+        margin: 0.5em
+        padding: 1em
+        border: none
+        border-radius: 1em
+        background-color: transparent
+        transition: background-color 0.2s ease-in-out
+        cursor: pointer
+
+        &:hover
+            background-color: $grey
+
+        &:focus
+            outline: none
+
+        &--disabled
+            color: $grey-2
+            cursor: none
+            pointer-events: none
+
+    &--extra-time
+        color: $black
+
+        .hours,
+        .minutes,
+        .seconds
+            color: $red
+
+    &__actions
+        display: flex
+        flex-wrap: wrap
+        justify-content: center
+        margin-top: 1em
+
+.hours,
+.minutes
+    font-size: 2em

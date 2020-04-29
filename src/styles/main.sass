@@ -1,0 +1,15 @@
+@import './font'
+@import './colors'
+
+
+html,
+body
+    @include fluid-type($min-width, $max-width, $min-font, $max-font)
+    width: 100vw
+    height: 100vh
+    margin: 0
+    padding: 0
+    color: $foreground
+    font-family: $ff-family, $ff-fallback
+    background-color: $background
+    overflow: hidden

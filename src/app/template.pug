@@ -1,0 +1,19 @@
+.app
+    header.app__header
+        | @amjs/working-on
+    main.app__main
+        .app__timer(v-html="chrono")
+        .app__date(v-html="date")
+        form.app__actions(@submit="_onSubmit")
+            button.app__button(type="button", @click="status = 'running'", :class="{'app__button--disabled' : !['paused','new'].includes(status)}")
+                template(v-if="status === 'new'")
+                    | Start
+                template(v-else)
+                    | Resume
+            button.app__button(type="button", :class="{ 'app__button--disabled' : status !== 'running' }", @click="status = 'paused'") Pause
+            button.app__button(type="button", :class="{ 'app__button--disabled' : status !== 'running' }", @click="status = 'stopped'") Stop
+            button.app__button(type="submit", :class="{ 'app__button--disabled' : status !== 'stopped' }") Submit
+            button.app__button(type="button", :class="{ 'app__button--disabled' : status === 'new' }", @click="_onReset") Reset
+    footer.app__footer
+        a(href="https://amartinez.dev")
+            | &copy; {{(new Date()).getFullYear()}} Arturo Martínez
